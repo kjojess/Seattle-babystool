@@ -1,0 +1,48 @@
+---
+title: "Seattle_babystool_plots"
+author: "Kelsey Jesser"
+date: "7/12/2021"
+output: html_document
+---
+#load libraries
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(reshape2)
+```
+
+#set theme
+```{r}
+theme_set(theme_bw())
+```
+
+#import data
+```{r}
+Seatt_BS<-read.csv("Seattle_babystool.csv")
+```
+
+#melt data and subset Ah and Ih
+```{r}
+Seatt_BS_melt<-melt(Seatt_BS, id.vars=c("Sample", "baby", "spike", "Halotolerans_source", "Description", "Qubit", "human_reads_raw", "total_reads_raw", "human_read_contam", "MicrobeCensus_GEs", "Ah_TAD_80", "Ih_TAD_80"))
+
+Seatt_BS_melt_Ah<-subset(Seatt_BS_melt, variable=="Ah_normalized_abundance_.")
+Seatt_BS_melt_Ih<-subset(Seatt_BS_melt, variable=="Ih_normalized_abundance_.")
+```
+
+#make barplots
+```{r}
+Ah_bar<-ggplot(Seatt_BS_melt_Ah, aes(fill=Halotolerans_source, y=value, x=Description))+geom_bar(stat="identity") + scale_fill_manual(values=c("orchid4", "palegreen4")) + ylab("percent abundance") + xlab("sample")
+Ah_bar
+
+Ih_bar<-ggplot(Seatt_BS_melt_Ih, aes(fill=Halotolerans_source, y=value, x=Description))+geom_bar(stat="identity") + scale_fill_manual(values=c("orchid4", "palegreen4")) + ylab("percent abundance") + xlab("sample")
+Ih_bar
+```
+#boxplots
+```{r}
+#halotolerans source
+ggplot(Seatt_BS_melt, aes(x=variable, y=value, color=variable)) + geom_boxplot() + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5) + ylab("percent_halotolerans") + scale_color_manual(values=c("violetred3", "slateblue"))
+
+#A v. I
+ggplot(Seatt_BS_melt, aes(x=variable, y=value, color=variable)) + geom_boxplot() + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5) + ylab("percent_halotolerans") + scale_color_manual(values=c("violetred3", "slateblue"))
+```
+

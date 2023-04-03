@@ -1,0 +1,9 @@
+Sample,baby,spike ,Halotolerans_source,Description,Qubit,human_reads_raw,total_reads_raw,human_read_contam,MicrobeCensus_GEs,Ah_TAD_80,Ih_TAD_80,Ah_normalized_abundance_%,Ih_normalized_abundance_%
+Spike_7,1,0.10%,UW,Babystool_1_UW1,46.7,10533,28559736,0.0004,237,0.03151135,0.2073451,1.33,8.75
+Spike_8,1,0.10%,UW,Babystool_1_UW2,36.4,12575,25066680,0.0005,205,0.01383305,0.1535842,0.67,7.49
+Spike_5,1,0.10%,Zymo,Babystool_1_Zymo1,52,11920,32271712,0.0004,267,0.02364555,0.05804545,0.89,2.17
+Spike_6,1,0.10%,Zymo,Babystool_1_Zymo2,56,7898,22258056,0.0004,157,0.01483294,0.0341142,0.94,2.17
+Spike_12,2,0.10%,UW,Babystool_2_UW,41.3,7125,25258612,0.0003,177,0.01120535,0.03693188,0.63,2.09
+Spike_11,2,0.10%,Zymo,Babystool_2_Zymo,37,6810,26343448,0.0003,196,0.01320554,0.03518702,0.67,1.80
+Spike_16,3,0.10%,UW,Babystool_3_UW,23.3,6615,24436988,0.0003,180,0.003152328,0.02305437,0.18,1.28
+Spike_15,3,0.10%,Zymo,Babystool_3_Zymo,49.2,8610,30670464,0.0003,242,0.003514017,0.01337358,0.15,0.55
